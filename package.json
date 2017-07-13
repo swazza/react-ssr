@@ -1,0 +1,36 @@
+{
+  "name": "react-ssr",
+  "version": "1.0.0",
+  "description": "A simple react-ssr example with webpack HMR and preboot",
+  "main": "index.js",
+  "repository": "git@github.com:swazza/react-ssr.git",
+  "author": "swazza (rup@swazza.io)",
+  "license": "MIT",
+  "scripts": {
+    "buildClient": "rm -rf ./dist/client && webpack --config ./build/webpack.client.config.js",
+    "startClient": "rm -rf ./dist/client && webpack-dev-server --config ./build/webpack.client.config.js",
+    "buildServer": "rm -rf ./dist/server && webpack --config ./build/webpack.server.config.js",
+    "startServer": "concurrently 'webpack --watch --config ./build/webpack.server.config.js' 'nodemon ./dist/server/app.server.bundle.js'"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-jsx": "^2.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "concurrently": "^3.5.0",
+    "html-webpack-plugin": "^2.29.0",
+    "nodemon": "^1.11.0",
+    "react-hot-loader": "next",
+    "webpack": "3.0.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}
